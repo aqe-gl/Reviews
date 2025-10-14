@@ -3,3 +3,41 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+main {
+    background-color: cornflowerblue;
+}
+
+h1 {
+    font-weight: normal;
+    border-bottom: 1px solid floralwhite;
+
+}
+
+h2 {
+    font-weight: normal;
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    background-color: antiquewhite;
+    border: 0;
+    padding: 6px 10px;
+    font-size: 20px;
+    width: 30%;
+}
+
+input[type=submit] {
+    font-weight: bold;
+    background-color: gold;
+    color: cornflowerblue;
+    padding: 10px 20px;
+    width: auto;
+}

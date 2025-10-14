@@ -1,3 +1,25 @@
 {% extends "base.html" %}
+
 {% block content %}
+    <h1>Reviews</h1>
+    <div class="review-form">
+        <h2>Leave review</h2>
+        <form>
+            <p>
+                <input type="text" placeholder="Enter your name">
+            </p>
+            <p>
+                <input type="email" placeholder="Enter your email">
+            </p>
+            <p>
+                <textarea placeholder="Enter your review here" cols="50" rows="5"></textarea>
+            </p>
+            <p>
+                <input type="submit" value="Leave review">
+            </p>
+        </form>
+    </div>
+    <div class="reviews">
+        <h2>All reviews</h2>
+    </div>
 {% endblock %}
