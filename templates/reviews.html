@@ -4,15 +4,15 @@
     <h1>Reviews</h1>
     <div class="review-form">
         <h2>Leave review</h2>
-        <form>
+        <form method="GET">
             <p>
-                <input type="text" placeholder="Enter your name">
+                <input type="text" name="name" placeholder="Enter your name">
             </p>
             <p>
-                <input type="email" placeholder="Enter your email">
+                <input type="email" name="email" placeholder="Enter your email">
             </p>
             <p>
-                <textarea placeholder="Enter your review here" cols="50" rows="5"></textarea>
+                <textarea placeholder="Enter your review here" name="review" cols="50" rows="5"></textarea>
             </p>
             <p>
                 <input type="submit" value="Leave review">
@@ -21,5 +21,21 @@
     </div>
     <div class="reviews">
         <h2>All reviews</h2>
+
+        <p>
+            <em>leaves {{ name1 }} {{ email1 }}</em>
+        </p>
+        <p>
+            {{ review1 }}
+        </p>
+        <hr>
+
+        <p>
+            <em>leaves {{ name2 }} {{ email2 }}</em>
+        </p>
+        <p>
+            {{ review2 }}
+        </p>
+        <hr>
     </div>
 {% endblock %}
