@@ -32,7 +32,7 @@ input, textarea {
     border: 0;
     padding: 6px 10px;
     font-size: 20px;
-    width: 30%;
+    width: 35%;
 }
 
 input[type=submit] {
@@ -41,4 +41,10 @@ input[type=submit] {
     color: cornflowerblue;
     padding: 10px 20px;
     width: auto;
+
+}
+
+label {
+    display: block;
+    font-size: 20px;
 }

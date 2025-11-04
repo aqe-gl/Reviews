@@ -4,16 +4,9 @@
     <h1>Reviews</h1>
     <div class="review-form">
         <h2>Leave review</h2>
-        <form method="GET">
-            <p>
-                <input type="text" name="name" placeholder="Enter your name">
-            </p>
-            <p>
-                <input type="email" name="email" placeholder="Enter your email">
-            </p>
-            <p>
-                <textarea placeholder="Enter your review here" name="review" cols="50" rows="5"></textarea>
-            </p>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
             <p>
                 <input type="submit" value="Leave review">
             </p>
