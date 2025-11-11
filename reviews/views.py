@@ -5,27 +5,30 @@ from reviews.forms import ReviewForm
 
 # Create your views here.
 def reviews(request):
-    name1 = "nick"
-    email1 = "nick@gamil.com"
-    review1 = "Nice View"
-
-    if request.method == "GET":
-        form = ReviewForm()
-        return render(request, "reviews.html",
-                      {'form': form, 'name1': name1, 'email1': email1, 'review1': review1})
-    elif request.method == "POST":
+    if request.method == "POST":
         form = ReviewForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
             print(data)
+            name = data.get('name')
+            email = data.get('email')
+            review = data.get('review')
+            rating = data.get('rating')
+            with open('data.csv', 'a') as file:
+                file.write(f"{name}|{email}|{review}|{rating}\n")
             return redirect("reviews")
+
+    with open('data.csv') as file:
+        reviews = file.readlines()
+        if len(reviews) > 0:
+            reviews_data = reviews[0]
+            name = reviews_data.split('|')[0]
+            email = reviews_data.split('|')[1]
+            review = reviews_data.split('|')[2]
+            rating = reviews_data.split('|')[3]
+            form = ReviewForm()
+            return render(request, "reviews.html", {'form': form, 'name1': name, 'email1': email, 'review1': review, 'rating1': rating},)
         else:
             form = ReviewForm()
-            return render(request, "reviews.html",
-                          {'form': form, 'name1': name1, 'email1': email1, 'review1': review1})
-    else:
-        form = ReviewForm()
-        return render(request, "reviews.html",
-                      {'form': form, 'name1': name1, 'email1': email1, 'review1': review1})
-
+            return render(request, "reviews.html", {'form': form})
 
