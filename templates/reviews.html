@@ -14,15 +14,17 @@
     </div>
     <div class="reviews">
         <h2>All reviews</h2>
+        {% for review in reviews %}
+            <p>
+                <em>leaves {{ review.name }} {{ review.email }}</em>
+            </p>
+            <p>
+                {{ review.review }}
+                {{ review.rating }}
+            </p>
+            <hr>
+        {% endfor %}
 
-        <p>
-            <em>leaves {{ name1 }} {{ email1 }}</em>
-        </p>
-        <p>
-            {{ review1 }}
-            {{ rating1 }}
-        </p>
-        <hr>
 
     </div>
 {% endblock %}
