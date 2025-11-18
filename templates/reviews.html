@@ -15,16 +15,18 @@
     <div class="reviews">
         <h2>All reviews</h2>
         {% for review in reviews %}
-            <p>
-                <em>leaves {{ review.name }} {{ review.email }}</em>
-            </p>
-            <p>
-                {{ review.review }}
-                {{ review.rating }}
-            </p>
-            <hr>
+            <div class="review-item">
+                <p class="user">
+                    <em>leaves {{ review.name }} {{ review.email }}</em>
+                </p>
+                <p class="review-text">
+                    {{ review.review }}
+                </p>
+                <p class="ratings">
+                    {{ review.rating }} / 10
+                </p>
+                <hr>
+            </div>
         {% endfor %}
-
-
     </div>
 {% endblock %}

@@ -1,7 +1,9 @@
 from django import forms
 
-class ReviewForm(forms.Form):
-    name = forms.CharField(max_length=25)
-    email = forms.EmailField()
-    review = forms.CharField(widget=forms.Textarea)
-    rating = forms.IntegerField(min_value=1, max_value=10)
+from reviews.models import Review
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['name', 'email', 'review', 'rating']
