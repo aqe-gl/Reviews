@@ -7,3 +7,6 @@ class Review(models.Model):
     email = models.EmailField()
     review = models.TextField()
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
+
+    def __str__(self):
+        return f"{self.name} | {self.rating} | {self.review}"
